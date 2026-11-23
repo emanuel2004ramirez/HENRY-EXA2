@@ -2,12 +2,22 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class equipo extends Model
+
+class Equipo extends Model
 {
-    /** @use HasFactory<\Database\Factories\EquipoFactory> */
+    
     use HasFactory;
-   
+
+
+    protected $table = 'equipo'; // Nombre de la tabla en la base de datos
+    protected $fillable = [
+        'codigo',
+        'nombre',
+        'marca',
+        'fecha_adquisicion',
+        'estado',
+    ];
 }

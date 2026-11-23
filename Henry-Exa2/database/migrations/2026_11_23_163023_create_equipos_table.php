@@ -11,8 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('equipos', function (Blueprint $table) {
+        Schema::create('equipo', function (Blueprint $table) {
             $table->id();
+            $table->string('codigo');
+            $table->string('nombre');
+            $table->string('marca');
+            $table->string('fecha_adquisicion');
+            $table->string('estado');
+
             $table->timestamps();
         });
     }
