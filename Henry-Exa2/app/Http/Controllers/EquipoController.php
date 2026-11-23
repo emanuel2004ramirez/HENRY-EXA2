@@ -84,5 +84,7 @@ class EquipoController extends Controller
     public function destroy(equipo $equipo)
     {
         //
+        $equipo->delete();
+        return redirect()->route('equipos.index');
     }
 }
