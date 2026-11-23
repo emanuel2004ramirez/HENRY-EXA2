@@ -56,7 +56,9 @@ class EquipoController extends Controller
      */
     public function edit(equipo $equipo)
     {
-        //
+        //mandar equipo a la vista edit
+
+        return view('equipo.edit', compact('equipo'));
     }
 
     /**
@@ -65,6 +67,15 @@ class EquipoController extends Controller
     public function update(Request $request, equipo $equipo)
     {
         //
+        $request->validate([
+            'codigo' => 'required',
+            'nombre' => 'required',
+            'marca' => 'required',
+            'fecha_adquisicion' => 'required',
+            'estado' => 'required',
+        ]);
+        $equipo->update($request->all());
+        return redirect()->route('equipos.index');
     }
 
     /**

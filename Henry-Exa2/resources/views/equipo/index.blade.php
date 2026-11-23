@@ -16,6 +16,7 @@
             <th>Marca</th>
             <th>Fecha de Adquisición</th>
             <th>Estado</th>
+            <th>Acciones</th>
         </tr>
     </thead>
     <tbody>
@@ -27,6 +28,9 @@
                 <td>{{ $equipo->marca }}</td>
                 <td>{{ $equipo->fecha_adquisicion }}</td>
                 <td>{{ $equipo->estado }}</td>
+                <td>
+                    <a href="{{ route('equipos.edit', $equipo->id) }}" class="btn btn-warning">Editar</a>
+                    
             </tr>
         @endforeach
     </tbody>
