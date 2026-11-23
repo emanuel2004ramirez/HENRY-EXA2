@@ -5,6 +5,8 @@
     <button type="submit" class="btn btn-danger">Cerrar sesión</button>
 </form>
 
+<a href="{{ route('equipos.create') }}" class="btn btn-primary">Agregar Equipo</a>
+
 <table class="table" border="1">
     <thead>
         <tr>

@@ -18,9 +18,13 @@ Route::middleware('auth')->group(function () {
     
 
 Route::get('/equipos', [EquipoController::class, 'index'])
-    ->name('equipos');
+    ->name('equipos.index');
 Route::post('/logout', [LoginController::class, 'destroy']) 
     ->name('logout');
+Route::get('/equipos/create', [EquipoController::class, 'create'])  
+    ->name('equipos.create');
+Route::post('/equipos', [EquipoController::class, 'store'])
+    ->name('equipos.store');
     
 
     })->name('equipos');    

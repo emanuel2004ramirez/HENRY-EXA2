@@ -23,6 +23,7 @@ class EquipoController extends Controller
     public function create()
     {
         //
+        return view('equipo.create');
     }
 
     /**
@@ -31,6 +32,15 @@ class EquipoController extends Controller
     public function store(Request $request)
     {
         //
+        $request->validate([
+            'codigo' => 'required',
+            'nombre' => 'required',
+            'marca' => 'required',
+            'fecha_adquisicion' => 'required',
+            'estado' => 'required',
+        ]);
+        Equipo::create($request->all());
+        return redirect()->route('equipos.index');
     }
 
     /**
