@@ -22,6 +22,10 @@ Route::middleware('auth')->group(function () {
         ->name('equipos.create');
     Route::post('/equipos', [EquipoController::class, 'store'])
         ->name('equipos.store');
+    Route::get('/equipos/{id}/editar', [EquipoController::class, 'edit'])
+        ->whereNumber('id')->name('equipos.edit');
+    Route::put('/equipos/{id}', [EquipoController::class, 'update'])
+        ->whereNumber('id')->name('equipos.update');
     Route::post('/logout', [LoginController::class, 'destroy'])
         ->name('logout');
 });
