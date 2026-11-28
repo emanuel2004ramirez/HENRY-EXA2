@@ -23,7 +23,15 @@
                     <td>{{ $equipo->marca }}</td>
                     <td>{{ $equipo->fecha_adquisicion->format('d/m/Y') }}</td>
                     <td>{{ $equipo->estado }}</td>
-                    <td><a href="{{ route('equipos.edit', $equipo->id) }}">Editar</a></td>
+                    <td>
+                        <a href="{{ route('equipos.edit', $equipo->id) }}">Editar</a>
+                        <form method="POST" action="{{ route('equipos.destroy', $equipo->id) }}"
+                              onsubmit="return confirm('¿Está seguro de eliminar este equipo?')">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit">Eliminar</button>
+                        </form>
+                    </td>
                 </tr>
             @empty
                 <tr><td colspan="7">No hay equipos registrados.</td></tr>
