@@ -1,6 +1,7 @@
 @extends('layouts.app')
 @section('contenido')
     <h1>Equipos registrados</h1>
+    <p><a href="{{ route('equipos.create') }}">Crear equipo</a></p>
     <table>
         <thead>
             <tr>
